@@ -8,12 +8,13 @@ namespace Tieto.Models
     public class Location
     {
 
-        public int Id;
-        public TravelType TravelType;
-        public bool IsCrossing;
-        public City City;
-        public DateTime Arrival;
-        public DateTime Departure;
+        public int ID { get; set; }
+        public TravelType TravelType { get; set; }
+        public bool IsCrossing { get; set; }
+        public City City { get; set; }
+        public DateTime Arrival { get; set; }
+        public DateTime Departure { get; set; }
+        public Trip Trip { get; set; }
 
     }
 

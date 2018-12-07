@@ -8,8 +8,8 @@ namespace Tieto.Models
     public class City
     {
 
-        public int Id;
-        public Country Country;
+        public int ID { get; set; }
+        public Country Country { get; set; }
 
     }
 }

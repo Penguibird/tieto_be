@@ -8,9 +8,8 @@ namespace Tieto.Models
     public class Allowance
     {
 
-        public int Id;
-        public int MoneyAmount;
-
+        public int ID { get; set; }
+        public int MoneyAmount { get; set; }
 
     }
 }

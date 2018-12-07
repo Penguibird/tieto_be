@@ -8,8 +8,8 @@ namespace Tieto.Models
     public class Trip
     {
 
-        public int Id;
-        public IEnumerable<Location> Locations;
+        public int ID { get; set; }
+        public IEnumerable<Location> Locations { get; set; }
 
     }
 }
