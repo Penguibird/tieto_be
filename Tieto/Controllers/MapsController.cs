@@ -27,7 +27,7 @@ namespace Tieto.Controllers
         public async Task<object> ValidateCity(string city)
         {
             HttpClient c = new HttpClient();
-            HttpResponseMessage m = await c.GetAsync("https://maps.googleapis.com/maps/api/place/autocomplete/json?language=en&key=AIzaSyDG1B11a9tDjqcNw9Dp1C7ZQi_bQIZSeKA&types=(cities)&input=" + city);
+            HttpResponseMessage m = await c.GetAsync("https://maps.googleapis.com/maps/api/place/autocomplete/json?language=en&key=" + GOOGLE_API_KEY + "&types=(cities)&input=" + city);
 
             string response = await m.Content.ReadAsStringAsync();
 
