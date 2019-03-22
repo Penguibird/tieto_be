@@ -8,7 +8,7 @@ namespace Tieto.BLL
 {
     public class MockTripManager : ITripManager
     {
-        public void Add(Trip trip)
+        public int Save(Trip trip)
         {
             throw new NotImplementedException();
         }
@@ -44,6 +44,21 @@ namespace Tieto.BLL
             l.Add(this.Get(1));
 
             return l;
+        }
+
+        public int Save(int userId, Trip trip)
+        {
+            throw new NotImplementedException();
+        }
+
+        public IList<Trip> GetList(int userId)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Trip SaveAndReturn(int userId, Trip trip)
+        {
+            throw new NotImplementedException();
         }
     }
 }

@@ -8,9 +8,10 @@ namespace Tieto.DLL
 {
     public class UserDbProvider : BaseDbProvider, IUserDbProvider
     {
-        public void Create(User User)
+        public void Create(User user)
         {
-            DbContext.Add(User);
+            DbContext.Add(user);
+            //user.Trips = new List<Trip>();
             DbContext.SaveChanges();
         }
 
@@ -45,6 +46,17 @@ namespace Tieto.DLL
         public User Read(int id)
         {
             return DbContext.Users.Find(id);
+        }
+
+        public void AddTrip(int id, Trip trip)
+        {
+            User u = DbContext.Users.Find(id);
+            /*if (u.Trips == null)
+            {
+                u.Trips = new List<Trip>();
+            }
+            u.Trips.Append(trip);*/
+            DbContext.SaveChanges();
         }
 
         public void Update(User User)

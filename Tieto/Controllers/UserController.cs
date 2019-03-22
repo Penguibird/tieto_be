@@ -35,6 +35,11 @@ namespace Tieto.Controllers
 
             User u = userManager.Authenticate(user.Username, user.Password);
 
+            if (u == null)
+            {
+                return null;
+            }
+
             var tokenHandler = new JwtSecurityTokenHandler();
             var key = new SymmetricSecurityKey(Encoding.ASCII.GetBytes("iwjrgoirwhoinwriognmcgweiuohgowimeugmvetwiuhvgkjtejklgjwklfkwipockpoeqkgpovet")); //string is a sectret that should be replaced
             var tokenDescriptor = new SecurityTokenDescriptor
@@ -82,7 +87,7 @@ namespace Tieto.Controllers
                 Email = user.Username,
                 FirstName = "",
                 LastName = "",
-                Trips = null
+                //Trips = null
             };
 
             userManager.GeneratePassword(u, user.Password);
@@ -90,6 +95,12 @@ namespace Tieto.Controllers
             userManager.Add(u);
 
             return Authenticate(user);
+        }
+
+        [HttpGet("tokenCheck")]
+        public bool TokenCheck()
+        {
+            return true;
         }
 
     }

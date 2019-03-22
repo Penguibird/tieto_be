@@ -11,7 +11,7 @@ namespace Tieto.BLL
     {
         public void Add(User user)
         {
-            IUserDbProvider db = new UserDbProvider();
+            IUserDbProvider db = ObjectContainer.GetUserDbProvider();
 
             db.Create(user);
         }
@@ -28,7 +28,9 @@ namespace Tieto.BLL
 
         public User Get(int id)
         {
-            throw new NotImplementedException();
+            IUserDbProvider db = ObjectContainer.GetUserDbProvider();
+
+            return db.Read(id);
         }
 
         public IList<User> GetList()
@@ -38,16 +40,24 @@ namespace Tieto.BLL
 
         public User Authenticate(string username, string password)
         {
-            IUserDbProvider db = new UserDbProvider();
+            IUserDbProvider db = ObjectContainer.GetUserDbProvider();
 
             return db.VerifyPassword(db.FindByUsername(username).ID, password);
         }
 
         public void GeneratePassword(User user, string password)
         {
-            IUserDbProvider db = new UserDbProvider();
+            IUserDbProvider db = ObjectContainer.GetUserDbProvider();
 
             db.CreatePassword(user, password);
         }
+
+        public void AddTrip(int userId, Trip trip)
+        {
+            IUserDbProvider db = ObjectContainer.GetUserDbProvider();
+          
+            db.AddTrip(userId, trip);
+        }
+
     }
 }

@@ -2,35 +2,54 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Tieto.DLL;
 using Tieto.Models;
 
 namespace Tieto.BLL
 {
     public class LocationManager : ILocationManager
     {
-        public void Add()
+        public int Save(Location location)
+        {
+            ILocationDbProvider db = ObjectContainer.GetLocationDbProvider();
+
+            if (location.ID == 0)
+            {
+                int id = db.Create(location);
+                return id;
+            }
+            else
+            {
+                return db.Update(location);
+            }
+        }
+        public void Delete(int id)
         {
             throw new NotImplementedException();
         }
 
-        public void Delete()
+        public void Edit(int id)
         {
             throw new NotImplementedException();
         }
 
-        public void Edit()
+        public Location Get(int id)
         {
-            throw new NotImplementedException();
+            ILocationDbProvider db = ObjectContainer.GetLocationDbProvider();
+
+            return db.Read(id);
         }
 
-        public Location Get()
+        public List<Location> GetList(Trip trip)
         {
-            throw new NotImplementedException();
+            return trip.Locations.ToList();
         }
 
-        public Location GetList(Trip trip)
+        public List<Location> GetList(int tripId)
         {
-            throw new NotImplementedException();
+            ITripDbProvider db = ObjectContainer.GetTripDbProvider();
+
+            return db.Read(tripId).Locations.ToList();
         }
     }
 }

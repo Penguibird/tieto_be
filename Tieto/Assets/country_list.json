@@ -1,0 +1,1587 @@
+[
+  
+  {
+    "name": "Czechia",
+    "currency": "2",
+    "currencyName": "2",
+    "id": "",
+    "rate100": "223",
+    "rate33": "93",
+    "rate66": "143"
+  },
+  {
+    "name": "Afghanistan",
+    "currency": "0",
+    "currencyName": "0",
+    "id": "",
+    "rate100": "40",
+    "rate33": "13.3",
+    "rate66": "26.7"
+  },
+  {
+    "name": "Albania",
+    "currency": "0",
+    "currencyName": "0",
+    "id": "",
+    "rate100": "35",
+    "rate33": "11.7",
+    "rate66": "23.3"
+  },
+  {
+    "name": "Algeria",
+    "currency": "0",
+    "currencyName": "0o",
+    "id": "",
+    "rate100": "45",
+    "rate33": "15",
+    "rate66": "30"
+  },
+  {
+    "name": "Andorra",
+    "currency": "0",
+    "currencyName": "0o",
+    "id": "",
+    "rate100": "40",
+    "rate33": "13.3",
+    "rate66": "26.7"
+  },
+  {
+    "name": "Angola",
+    "currency": "1",
+    "currencyName": "american dollar",
+    "id": "",
+    "rate100": "60",
+    "rate33": "20",
+    "rate66": "40"
+  },
+  {
+    "name": "Argentina",
+    "currency": "1",
+    "currencyName": "american dollar",
+    "id": "",
+    "rate100": "45",
+    "rate33": "15",
+    "rate66": "30"
+  },
+  {
+    "name": "Armenia",
+    "currency": "0",
+    "currencyName": "0o",
+    "id": "",
+    "rate100": "35",
+    "rate33": "11.7",
+    "rate66": "23.3"
+  },
+  {
+    "name": "Australia",
+    "currency": "1",
+    "currencyName": "american dollar",
+    "id": "",
+    "rate100": "55",
+    "rate33": "18.3",
+    "rate66": "36.7"
+  },
+  {
+    "name": "Austria",
+    "currency": "0",
+    "currencyName": "0o",
+    "id": "0",
+    "rate100": "45",
+    "rate33": "15",
+    "rate66": "30"
+  },
+  {
+    "name": "Azerbaijan",
+    "currency": "0",
+    "currencyName": "0o",
+    "id": "1",
+    "rate100": "40",
+    "rate33": "13.3",
+    "rate66": "26.7"
+  },
+  {
+    "name": "Bahrain",
+    "currency": "0",
+    "currencyName": "0o",
+    "id": "2",
+    "rate100": "40",
+    "rate33": "13.3",
+    "rate66": "26.7"
+  },
+  {
+    "name": "Bangladesh",
+    "currency": "1",
+    "currencyName": "american dollar",
+    "id": "3",
+    "rate100": "50",
+    "rate33": "16.7",
+    "rate66": "33.3"
+  },
+  {
+    "name": "Belarus",
+    "currency": "0",
+    "currencyName": "0o",
+    "id": "4",
+    "rate100": "45",
+    "rate33": "15",
+    "rate66": "30"
+  },
+  {
+    "name": "Belgium",
+    "currency": "0",
+    "currencyName": "0o",
+    "id": "5",
+    "rate100": "50",
+    "rate33": "16.7",
+    "rate66": "33.3"
+  },
+  {
+    "name": "Belize",
+    "currency": "1",
+    "currencyName": "american dollar",
+    "id": "6",
+    "rate100": "50",
+    "rate33": "16.7",
+    "rate66": "33.3"
+  },
+  {
+    "name": "Benin",
+    "currency": "0",
+    "currencyName": "0o",
+    "id": "7",
+    "rate100": "45",
+    "rate33": "15",
+    "rate66": "30"
+  },
+  {
+    "name": "Bermudas",
+    "currency": "1",
+    "currencyName": "american dollar",
+    "id": "8",
+    "rate100": "50",
+    "rate33": "16.7",
+    "rate66": "33.3"
+  },
+  {
+    "name": "Bhutan",
+    "currency": "1",
+    "currencyName": "american dollar",
+    "id": "9",
+    "rate100": "50",
+    "rate33": "16.7",
+    "rate66": "33.3"
+  },
+  {
+    "name": "Bolivia",
+    "currency": "1",
+    "currencyName": "american dollar",
+    "id": "0",
+    "rate100": "50",
+    "rate33": "16.7",
+    "rate66": "33.3"
+  },
+  {
+    "name": "Bosnia and Herzegovina",
+    "currency": "0",
+    "currencyName": "0o",
+    "id": "1",
+    "rate100": "35",
+    "rate33": "11.7",
+    "rate66": "23.3"
+  },
+  {
+    "name": "Botswana",
+    "currency": "1",
+    "currencyName": "american dollar",
+    "id": "2",
+    "rate100": "55",
+    "rate33": "18.3",
+    "rate66": "36.7"
+  },
+  {
+    "name": "Brazil",
+    "currency": "1",
+    "currencyName": "american dollar",
+    "id": "3",
+    "rate100": "55",
+    "rate33": "18.3",
+    "rate66": "36.7"
+  },
+  {
+    "name": "Brunei",
+    "currency": "1",
+    "currencyName": "american dollar",
+    "id": "4",
+    "rate100": "40",
+    "rate33": "13.3",
+    "rate66": "26.7"
+  },
+  {
+    "name": "Bulgaria",
+    "currency": "0",
+    "currencyName": "0o",
+    "id": "5",
+    "rate100": "35",
+    "rate33": "11.7",
+    "rate66": "23.3"
+  },
+  {
+    "name": "Burkina Faso",
+    "currency": "0",
+    "currencyName": "0o",
+    "id": "6",
+    "rate100": "40",
+    "rate33": "13.3",
+    "rate66": "26.7"
+  },
+  {
+    "name": "Burundi",
+    "currency": "1",
+    "currencyName": "american dollar",
+    "id": "7",
+    "rate100": "55",
+    "rate33": "18.3",
+    "rate66": "36.7"
+  },
+  {
+    "name": "Cambodia",
+    "currency": "1",
+    "currencyName": "american dollar",
+    "id": "8",
+    "rate100": "45",
+    "rate33": "15",
+    "rate66": "30"
+  },
+  {
+    "name": "Cameroon",
+    "currency": "0",
+    "currencyName": "0o",
+    "id": "9",
+    "rate100": "45",
+    "rate33": "15",
+    "rate66": "30"
+  },
+  {
+    "name": "Canada",
+    "currency": "1",
+    "currencyName": "american dollar",
+    "id": "0",
+    "rate100": "50",
+    "rate33": "16.7",
+    "rate66": "33.3"
+  },
+  {
+    "name": "Cape Verde",
+    "currency": "0",
+    "currencyName": "0o",
+    "id": "1",
+    "rate100": "40",
+    "rate33": "13.3",
+    "rate66": "26.7"
+  },
+  {
+    "name": "Caribbean",
+    "currency": "1",
+    "currencyName": "american dollar",
+    "id": "2",
+    "rate100": "50",
+    "rate33": "16.7",
+    "rate66": "33.3"
+  },
+  {
+    "name": "Central African Republic",
+    "currency": "1",
+    "currencyName": "american dollar",
+    "id": "3",
+    "rate100": "45",
+    "rate33": "15",
+    "rate66": "30"
+  },
+  {
+    "name": "Colombia",
+    "currency": "1",
+    "currencyName": "american dollar",
+    "id": "4",
+    "rate100": "45",
+    "rate33": "15",
+    "rate66": "30"
+  },
+  {
+    "name": "Costa Rica",
+    "currency": "1",
+    "currencyName": "american dollar",
+    "id": "5",
+    "rate100": "50",
+    "rate33": "16.7",
+    "rate66": "33.3"
+  },
+  {
+    "name": "Croatia",
+    "currency": "0",
+    "currencyName": "0o",
+    "id": "6",
+    "rate100": "35",
+    "rate33": "11.7",
+    "rate66": "23.3"
+  },
+  {
+    "name": "Cuba",
+    "currency": "0",
+    "currencyName": "0o",
+    "id": "7",
+    "rate100": "45",
+    "rate33": "15",
+    "rate66": "30"
+  },
+  {
+    "name": "Cyprus",
+    "currency": "0",
+    "currencyName": "0o",
+    "id": "8",
+    "rate100": "40",
+    "rate33": "13.3",
+    "rate66": "26.7"
+  },
+  {
+    "name": "Democratic People's Republic of Korea",
+    "currency": "0",
+    "currencyName": "0o",
+    "id": "9",
+    "rate100": "40",
+    "rate33": "13.3",
+    "rate66": "26.7"
+  },
+  {
+    "name": "Democratic Republic of the Congo",
+    "currency": "1",
+    "currencyName": "american dollar",
+    "id": "0",
+    "rate100": "60",
+    "rate33": "20",
+    "rate66": "40"
+  },
+  {
+    "name": "Denmark",
+    "currency": "0",
+    "currencyName": "0o",
+    "id": "1",
+    "rate100": "50",
+    "rate33": "16.7",
+    "rate66": "33.3"
+  },
+  {
+    "name": "Djibouti",
+    "currency": "0",
+    "currencyName": "0o",
+    "id": "2",
+    "rate100": "50",
+    "rate33": "16.7",
+    "rate66": "33.3"
+  },
+  {
+    "name": "Ecuador",
+    "currency": "1",
+    "currencyName": "american dollar",
+    "id": "3",
+    "rate100": "45",
+    "rate33": "15",
+    "rate66": "30"
+  },
+  {
+    "name": "Egypt",
+    "currency": "0",
+    "currencyName": "0o",
+    "id": "4",
+    "rate100": "35",
+    "rate33": "11.7",
+    "rate66": "23.3"
+  },
+  {
+    "name": "El Salvador",
+    "currency": "1",
+    "currencyName": "american dollar",
+    "id": "5",
+    "rate100": "45",
+    "rate33": "15",
+    "rate66": "30"
+  },
+  {
+    "name": "Equatorial Guinea",
+    "currency": "0",
+    "currencyName": "0o",
+    "id": "6",
+    "rate100": "45",
+    "rate33": "15",
+    "rate66": "30"
+  },
+  {
+    "name": "Eritrea",
+    "currency": "1",
+    "currencyName": "american dollar",
+    "id": "7",
+    "rate100": "50",
+    "rate33": "16.7",
+    "rate66": "33.3"
+  },
+  {
+    "name": "Estonia",
+    "currency": "0",
+    "currencyName": "0o",
+    "id": "8",
+    "rate100": "40",
+    "rate33": "13.3",
+    "rate66": "26.7"
+  },
+  {
+    "name": "Ethiopia",
+    "currency": "0",
+    "currencyName": "0o",
+    "id": "9",
+    "rate100": "45",
+    "rate33": "15",
+    "rate66": "30"
+  },
+  {
+    "name": "Federal Islamic Republic of the Comoros",
+    "currency": "1",
+    "currencyName": "american dollar",
+    "id": "0",
+    "rate100": "55",
+    "rate33": "18.3",
+    "rate66": "36.7"
+  },
+  {
+    "name": "Finland",
+    "currency": "0",
+    "currencyName": "0o",
+    "id": "1",
+    "rate100": "50",
+    "rate33": "16.7",
+    "rate66": "33.3"
+  },
+  {
+    "name": "France",
+    "currency": "0",
+    "currencyName": "0o",
+    "id": "2",
+    "rate100": "45",
+    "rate33": "15",
+    "rate66": "30"
+  },
+  {
+    "name": "French Guiana",
+    "currency": "0",
+    "currencyName": "0o",
+    "id": "3",
+    "rate100": "45",
+    "rate33": "15",
+    "rate66": "30"
+  },
+  {
+    "name": "Gabon",
+    "currency": "0",
+    "currencyName": "0o",
+    "id": "4",
+    "rate100": "50",
+    "rate33": "16.7",
+    "rate66": "33.3"
+  },
+  {
+    "name": "Georgia",
+    "currency": "0",
+    "currencyName": "0o",
+    "id": "5",
+    "rate100": "35",
+    "rate33": "11.7",
+    "rate66": "23.3"
+  },
+  {
+    "name": "Germany",
+    "currency": "0",
+    "currencyName": "0o",
+    "id": "6",
+    "rate100": "45",
+    "rate33": "15",
+    "rate66": "30"
+  },
+  {
+    "name": "Ghana",
+    "currency": "0",
+    "currencyName": "0o",
+    "id": "7",
+    "rate100": "50",
+    "rate33": "16.7",
+    "rate66": "33.3"
+  },
+  {
+    "name": "Gibraltar",
+    "currency": "0",
+    "currencyName": "0o",
+    "id": "8",
+    "rate100": "40",
+    "rate33": "13.3",
+    "rate66": "26.7"
+  },
+  {
+    "name": "Greece",
+    "currency": "0",
+    "currencyName": "0o",
+    "id": "9",
+    "rate100": "40",
+    "rate33": "13.3",
+    "rate66": "26.7"
+  },
+  {
+    "name": "Guatemala",
+    "currency": "1",
+    "currencyName": "american dollar",
+    "id": "0",
+    "rate100": "45",
+    "rate33": "15",
+    "rate66": "30"
+  },
+  {
+    "name": "Guinea",
+    "currency": "0",
+    "currencyName": "0o",
+    "id": "1",
+    "rate100": "45",
+    "rate33": "15",
+    "rate66": "30"
+  },
+  {
+    "name": "Guinea-Bissau",
+    "currency": "0",
+    "currencyName": "0o",
+    "id": "2",
+    "rate100": "45",
+    "rate33": "15",
+    "rate66": "30"
+  },
+  {
+    "name": "Guyana",
+    "currency": "1",
+    "currencyName": "american dollar",
+    "id": "3",
+    "rate100": "50",
+    "rate33": "16.7",
+    "rate66": "33.3"
+  },
+  {
+    "name": "Honduras",
+    "currency": "1",
+    "currencyName": "american dollar",
+    "id": "4",
+    "rate100": "45",
+    "rate33": "15",
+    "rate66": "30"
+  },
+  {
+    "name": "Hongkong",
+    "currency": "0",
+    "currencyName": "0o",
+    "id": "5",
+    "rate100": "45",
+    "rate33": "15",
+    "rate66": "30"
+  },
+  {
+    "name": "Hungary",
+    "currency": "0",
+    "currencyName": "0o",
+    "id": "6",
+    "rate100": "35",
+    "rate33": "11.7",
+    "rate66": "23.3"
+  },
+  {
+    "name": "Chad",
+    "currency": "0",
+    "currencyName": "0o",
+    "id": "7",
+    "rate100": "45",
+    "rate33": "15",
+    "rate66": "30"
+  },
+  {
+    "name": "Chile",
+    "currency": "1",
+    "currencyName": "american dollar",
+    "id": "8",
+    "rate100": "50",
+    "rate33": "16.7",
+    "rate66": "33.3"
+  },
+  {
+    "name": "China",
+    "currency": "0",
+    "currencyName": "0o",
+    "id": "9",
+    "rate100": "45",
+    "rate33": "15",
+    "rate66": "30"
+  },
+  {
+    "name": "Iceland",
+    "currency": "0",
+    "currencyName": "0o",
+    "id": "0",
+    "rate100": "55",
+    "rate33": "18.3",
+    "rate66": "36.7"
+  },
+  {
+    "name": "India",
+    "currency": "0",
+    "currencyName": "0o",
+    "id": "1",
+    "rate100": "45",
+    "rate33": "15",
+    "rate66": "30"
+  },
+  {
+    "name": "Indonesia",
+    "currency": "0",
+    "currencyName": "0o",
+    "id": "2",
+    "rate100": "35",
+    "rate33": "11.7",
+    "rate66": "23.3"
+  },
+  {
+    "name": "Iran",
+    "currency": "0",
+    "currencyName": "0o",
+    "id": "3",
+    "rate100": "40",
+    "rate33": "13.3",
+    "rate66": "26.7"
+  },
+  {
+    "name": "Iraq",
+    "currency": "0",
+    "currencyName": "0o",
+    "id": "4",
+    "rate100": "40",
+    "rate33": "13.3",
+    "rate66": "26.7"
+  },
+  {
+    "name": "Ireland",
+    "currency": "0",
+    "currencyName": "0o",
+    "id": "5",
+    "rate100": "45",
+    "rate33": "15",
+    "rate66": "30"
+  },
+  {
+    "name": "Israel",
+    "currency": "1",
+    "currencyName": "american dollar",
+    "id": "6",
+    "rate100": "55",
+    "rate33": "18.3",
+    "rate66": "36.7"
+  },
+  {
+    "name": "Italy",
+    "currency": "0",
+    "currencyName": "0o",
+    "id": "7",
+    "rate100": "45",
+    "rate33": "15",
+    "rate66": "30"
+  },
+  {
+    "name": "Ivory Coast",
+    "currency": "0",
+    "currencyName": "0o",
+    "id": "8",
+    "rate100": "40",
+    "rate33": "13.3",
+    "rate66": "26.7"
+  },
+  {
+    "name": "Japan",
+    "currency": "1",
+    "currencyName": "american dollar",
+    "id": "9",
+    "rate100": "65",
+    "rate33": "21.7",
+    "rate66": "43.3"
+  },
+  {
+    "name": "Jordan",
+    "currency": "0",
+    "currencyName": "0o",
+    "id": "0",
+    "rate100": "40",
+    "rate33": "13.3",
+    "rate66": "26.7"
+  },
+  {
+    "name": "Kazakhstan",
+    "currency": "0",
+    "currencyName": "0o",
+    "id": "1",
+    "rate100": "45",
+    "rate33": "15",
+    "rate66": "30"
+  },
+  {
+    "name": "Kenya",
+    "currency": "0",
+    "currencyName": "0o",
+    "id": "2",
+    "rate100": "45",
+    "rate33": "15",
+    "rate66": "30"
+  },
+  {
+    "name": "Kosovo",
+    "currency": "0",
+    "currencyName": "0o",
+    "id": "3",
+    "rate100": "45",
+    "rate33": "15",
+    "rate66": "30"
+  },
+  {
+    "name": "Kuwait",
+    "currency": "0",
+    "currencyName": "0o",
+    "id": "4",
+    "rate100": "40",
+    "rate33": "13.3",
+    "rate66": "26.7"
+  },
+  {
+    "name": "Kyrgyz Republic",
+    "currency": "0",
+    "currencyName": "0o",
+    "id": "5",
+    "rate100": "40",
+    "rate33": "13.3",
+    "rate66": "26.7"
+  },
+  {
+    "name": "Laos",
+    "currency": "1",
+    "currencyName": "american dollar",
+    "id": "6",
+    "rate100": "45",
+    "rate33": "15",
+    "rate66": "30"
+  },
+  {
+    "name": "Latvia",
+    "currency": "0",
+    "currencyName": "0o",
+    "id": "7",
+    "rate100": "40",
+    "rate33": "13.3",
+    "rate66": "26.7"
+  },
+  {
+    "name": "Lebanon",
+    "currency": "1",
+    "currencyName": "american dollar",
+    "id": "8",
+    "rate100": "55",
+    "rate33": "18.3",
+    "rate66": "36.7"
+  },
+  {
+    "name": "Lesotho",
+    "currency": "1",
+    "currencyName": "american dollar",
+    "id": "9",
+    "rate100": "50",
+    "rate33": "16.7",
+    "rate66": "33.3"
+  },
+  {
+    "name": "Liberia",
+    "currency": "0",
+    "currencyName": "0o",
+    "id": "0",
+    "rate100": "45",
+    "rate33": "15",
+    "rate66": "30"
+  },
+  {
+    "name": "Libya",
+    "currency": "0",
+    "currencyName": "0o",
+    "id": "1",
+    "rate100": "45",
+    "rate33": "15",
+    "rate66": "30"
+  },
+  {
+    "name": "Liechtenstein",
+    "currency": "0",
+    "currencyName": "0o",
+    "id": "2",
+    "rate100": "45",
+    "rate33": "15",
+    "rate66": "30"
+  },
+  {
+    "name": "Lithuania",
+    "currency": "0",
+    "currencyName": "0o",
+    "id": "3",
+    "rate100": "40",
+    "rate33": "13.3",
+    "rate66": "26.7"
+  },
+  {
+    "name": "Luxembourg",
+    "currency": "0",
+    "currencyName": "0o",
+    "id": "4",
+    "rate100": "45",
+    "rate33": "15",
+    "rate66": "30"
+  },
+  {
+    "name": "Macau",
+    "currency": "0",
+    "currencyName": "0o",
+    "id": "5",
+    "rate100": "45",
+    "rate33": "15",
+    "rate66": "30"
+  },
+  {
+    "name": "Macedonia",
+    "currency": "0",
+    "currencyName": "0o",
+    "id": "6",
+    "rate100": "35",
+    "rate33": "11.7",
+    "rate66": "23.3"
+  },
+  {
+    "name": "Madagascar",
+    "currency": "0",
+    "currencyName": "0o",
+    "id": "7",
+    "rate100": "40",
+    "rate33": "13.3",
+    "rate66": "26.7"
+  },
+  {
+    "name": "Malawi",
+    "currency": "1",
+    "currencyName": "american dollar",
+    "id": "8",
+    "rate100": "45",
+    "rate33": "15",
+    "rate66": "30"
+  },
+  {
+    "name": "Malaysia",
+    "currency": "1",
+    "currencyName": "american dollar",
+    "id": "9",
+    "rate100": "40",
+    "rate33": "13.3",
+    "rate66": "26.7"
+  },
+  {
+    "name": "Maldives",
+    "currency": "1",
+    "currencyName": "american dollar",
+    "id": "00",
+    "rate100": "55",
+    "rate33": "18.3",
+    "rate66": "36.7"
+  },
+  {
+    "name": "Mali",
+    "currency": "0",
+    "currencyName": "0o",
+    "id": "01",
+    "rate100": "45",
+    "rate33": "15",
+    "rate66": "30"
+  },
+  {
+    "name": "Malta",
+    "currency": "0",
+    "currencyName": "0o",
+    "id": "02",
+    "rate100": "45",
+    "rate33": "15",
+    "rate66": "30"
+  },
+  {
+    "name": "Mauritania",
+    "currency": "0",
+    "currencyName": "0o",
+    "id": "03",
+    "rate100": "35",
+    "rate33": "11.7",
+    "rate66": "23.3"
+  },
+  {
+    "name": "Mauritius",
+    "currency": "1",
+    "currencyName": "american dollar",
+    "id": "04",
+    "rate100": "55",
+    "rate33": "18.3",
+    "rate66": "36.7"
+  },
+  {
+    "name": "Mexico",
+    "currency": "1",
+    "currencyName": "american dollar",
+    "id": "05",
+    "rate100": "50",
+    "rate33": "16.7",
+    "rate66": "33.3"
+  },
+  {
+    "name": "Moldova",
+    "currency": "0",
+    "currencyName": "0o",
+    "id": "06",
+    "rate100": "40",
+    "rate33": "13.3",
+    "rate66": "26.7"
+  },
+  {
+    "name": "Monaco",
+    "currency": "0",
+    "currencyName": "0o",
+    "id": "07",
+    "rate100": "45",
+    "rate33": "15",
+    "rate66": "30"
+  },
+  {
+    "name": "Mongolia",
+    "currency": "0",
+    "currencyName": "0o",
+    "id": "08",
+    "rate100": "40",
+    "rate33": "13.3",
+    "rate66": "26.7"
+  },
+  {
+    "name": "Montenegro",
+    "currency": "0",
+    "currencyName": "0o",
+    "id": "09",
+    "rate100": "35",
+    "rate33": "11.7",
+    "rate66": "23.3"
+  },
+  {
+    "name": "Morocco",
+    "currency": "0",
+    "currencyName": "0o",
+    "id": "10",
+    "rate100": "40",
+    "rate33": "13.3",
+    "rate66": "26.7"
+  },
+  {
+    "name": "Mozambique",
+    "currency": "1",
+    "currencyName": "american dollar",
+    "id": "11",
+    "rate100": "50",
+    "rate33": "16.7",
+    "rate66": "33.3"
+  },
+  {
+    "name": "Namibia",
+    "currency": "1",
+    "currencyName": "american dollar",
+    "id": "12",
+    "rate100": "50",
+    "rate33": "16.7",
+    "rate66": "33.3"
+  },
+  {
+    "name": "Nepal",
+    "currency": "1",
+    "currencyName": "american dollar",
+    "id": "13",
+    "rate100": "50",
+    "rate33": "16.7",
+    "rate66": "33.3"
+  },
+  {
+    "name": "Netherlands",
+    "currency": "0",
+    "currencyName": "0o",
+    "id": "14",
+    "rate100": "45",
+    "rate33": "15",
+    "rate66": "30"
+  },
+  {
+    "name": "New Zealand",
+    "currency": "1",
+    "currencyName": "american dollar",
+    "id": "15",
+    "rate100": "55",
+    "rate33": "18.3",
+    "rate66": "36.7"
+  },
+  {
+    "name": "Nicaragua",
+    "currency": "1",
+    "currencyName": "american dollar",
+    "id": "16",
+    "rate100": "45",
+    "rate33": "15",
+    "rate66": "30"
+  },
+  {
+    "name": "Niger",
+    "currency": "0",
+    "currencyName": "0o",
+    "id": "17",
+    "rate100": "45",
+    "rate33": "15",
+    "rate66": "30"
+  },
+  {
+    "name": "Nigeria",
+    "currency": "0",
+    "currencyName": "0o",
+    "id": "18",
+    "rate100": "45",
+    "rate33": "15",
+    "rate66": "30"
+  },
+  {
+    "name": "Norway",
+    "currency": "0",
+    "currencyName": "0o",
+    "id": "19",
+    "rate100": "55",
+    "rate33": "18.3",
+    "rate66": "36.7"
+  },
+  {
+    "name": "Oman",
+    "currency": "0",
+    "currencyName": "0o",
+    "id": "20",
+    "rate100": "40",
+    "rate33": "13.3",
+    "rate66": "26.7"
+  },
+  {
+    "name": "Pakistan",
+    "currency": "0",
+    "currencyName": "0o",
+    "id": "21",
+    "rate100": "35",
+    "rate33": "11.7",
+    "rate66": "23.3"
+  },
+  {
+    "name": "Panama",
+    "currency": "1",
+    "currencyName": "american dollar",
+    "id": "22",
+    "rate100": "45",
+    "rate33": "15",
+    "rate66": "30"
+  },
+  {
+    "name": "Paraguay",
+    "currency": "1",
+    "currencyName": "american dollar",
+    "id": "23",
+    "rate100": "45",
+    "rate33": "15",
+    "rate66": "30"
+  },
+  {
+    "name": "Peru",
+    "currency": "1",
+    "currencyName": "american dollar",
+    "id": "24",
+    "rate100": "50",
+    "rate33": "16.7",
+    "rate66": "33.3"
+  },
+  {
+    "name": "Philippines",
+    "currency": "0",
+    "currencyName": "0o",
+    "id": "25",
+    "rate100": "35",
+    "rate33": "11.7",
+    "rate66": "23.3"
+  },
+  {
+    "name": "Poland",
+    "currency": "0",
+    "currencyName": "0o",
+    "id": "26",
+    "rate100": "35",
+    "rate33": "11.7",
+    "rate66": "23.3"
+  },
+  {
+    "name": "Portugal",
+    "currency": "0",
+    "currencyName": "0o",
+    "id": "27",
+    "rate100": "40",
+    "rate33": "13.3",
+    "rate66": "26.7"
+  },
+  {
+    "name": "Qatar",
+    "currency": "1",
+    "currencyName": "american dollar",
+    "id": "28",
+    "rate100": "50",
+    "rate33": "16.7",
+    "rate66": "33.3"
+  },
+  {
+    "name": "Republic of Korea",
+    "currency": "0",
+    "currencyName": "0o",
+    "id": "29",
+    "rate100": "45",
+    "rate33": "15",
+    "rate66": "30"
+  },
+  {
+    "name": "Republic of Serbia",
+    "currency": "0",
+    "currencyName": "0o",
+    "id": "30",
+    "rate100": "40",
+    "rate33": "13.3",
+    "rate66": "26.7"
+  },
+  {
+    "name": "Republic of the Congo",
+    "currency": "1",
+    "currencyName": "american dollar",
+    "id": "31",
+    "rate100": "60",
+    "rate33": "20",
+    "rate66": "40"
+  },
+  {
+    "name": "Romania",
+    "currency": "0",
+    "currencyName": "0o",
+    "id": "32",
+    "rate100": "35",
+    "rate33": "11.7",
+    "rate66": "23.3"
+  },
+  {
+    "name": "Russia",
+    "currency": "0",
+    "currencyName": "0o",
+    "id": "33",
+    "rate100": "45",
+    "rate33": "15",
+    "rate66": "30"
+  },
+  {
+    "name": "Rwanda",
+    "currency": "1",
+    "currencyName": "american dollar",
+    "id": "34",
+    "rate100": "55",
+    "rate33": "18.3",
+    "rate66": "36.7"
+  },
+  {
+    "name": "Sao Tome and Principe",
+    "currency": "1",
+    "currencyName": "american dollar",
+    "id": "35",
+    "rate100": "35",
+    "rate33": "11.7",
+    "rate66": "23.3"
+  },
+  {
+    "name": "Saudi Arabia",
+    "currency": "0",
+    "currencyName": "0o",
+    "id": "36",
+    "rate100": "40",
+    "rate33": "13.3",
+    "rate66": "26.7"
+  },
+  {
+    "name": "Senegal",
+    "currency": "0",
+    "currencyName": "0o",
+    "id": "37",
+    "rate100": "40",
+    "rate33": "13.3",
+    "rate66": "26.7"
+  },
+  {
+    "name": "Seychelles",
+    "currency": "1",
+    "currencyName": "american dollar",
+    "id": "38",
+    "rate100": "60",
+    "rate33": "20",
+    "rate66": "40"
+  },
+  {
+    "name": "Sierra Leone",
+    "currency": "0",
+    "currencyName": "0o",
+    "id": "39",
+    "rate100": "40",
+    "rate33": "13.3",
+    "rate66": "26.7"
+  },
+  {
+    "name": "Singapore",
+    "currency": "1",
+    "currencyName": "american dollar",
+    "id": "40",
+    "rate100": "50",
+    "rate33": "16.7",
+    "rate66": "33.3"
+  },
+  {
+    "name": "Slovakia",
+    "currency": "0",
+    "currencyName": "0o",
+    "id": "41",
+    "rate100": "35",
+    "rate33": "11.7",
+    "rate66": "23.3"
+  },
+  {
+    "name": "Slovenia",
+    "currency": "0",
+    "currencyName": "0o",
+    "id": "42",
+    "rate100": "35",
+    "rate33": "11.7",
+    "rate66": "23.3"
+  },
+  {
+    "name": "Somalia",
+    "currency": "1",
+    "currencyName": "american dollar",
+    "id": "43",
+    "rate100": "55",
+    "rate33": "18.3",
+    "rate66": "36.7"
+  },
+  {
+    "name": "South Africa",
+    "currency": "0",
+    "currencyName": "0o",
+    "id": "44",
+    "rate100": "40",
+    "rate33": "13.3",
+    "rate66": "26.7"
+  },
+  {
+    "name": "Spain",
+    "currency": "0",
+    "currencyName": "0o",
+    "id": "45",
+    "rate100": "40",
+    "rate33": "13.3",
+    "rate66": "26.7"
+  },
+  {
+    "name": "Sri Lanka",
+    "currency": "1",
+    "currencyName": "american dollar",
+    "id": "46",
+    "rate100": "50",
+    "rate33": "16.7",
+    "rate66": "33.3"
+  },
+  {
+    "name": "Sudan",
+    "currency": "1",
+    "currencyName": "american dollar",
+    "id": "47",
+    "rate100": "55",
+    "rate33": "18.3",
+    "rate66": "36.7"
+  },
+  {
+    "name": "Suriname",
+    "currency": "1",
+    "currencyName": "american dollar",
+    "id": "48",
+    "rate100": "50",
+    "rate33": "16.7",
+    "rate66": "33.3"
+  },
+  {
+    "name": "Swaziland",
+    "currency": "1",
+    "currencyName": "american dollar",
+    "id": "49",
+    "rate100": "55",
+    "rate33": "18.3",
+    "rate66": "36.7"
+  },
+  {
+    "name": "Sweden",
+    "currency": "0",
+    "currencyName": "0o",
+    "id": "50",
+    "rate100": "50",
+    "rate33": "16.7",
+    "rate66": "33.3"
+  },
+  {
+    "name": "Switzerland",
+    "currency": "3",
+    "currencyName": "swiss franc",
+    "id": "51",
+    "rate100": "75",
+    "rate33": "25",
+    "rate66": "50"
+  },
+  {
+    "name": "Syria",
+    "currency": "0",
+    "currencyName": "0o",
+    "id": "52",
+    "rate100": "35",
+    "rate33": "11.7",
+    "rate66": "23.3"
+  },
+  {
+    "name": "Tajikistan",
+    "currency": "0",
+    "currencyName": "0o",
+    "id": "53",
+    "rate100": "40",
+    "rate33": "13.3",
+    "rate66": "26.7"
+  },
+  {
+    "name": "Tanzania",
+    "currency": "1",
+    "currencyName": "american dollar",
+    "id": "54",
+    "rate100": "55",
+    "rate33": "18.3",
+    "rate66": "36.7"
+  },
+  {
+    "name": "Thailand",
+    "currency": "0",
+    "currencyName": "0o",
+    "id": "55",
+    "rate100": "40",
+    "rate33": "13.3",
+    "rate66": "26.7"
+  },
+  {
+    "name": "The Bahamas",
+    "currency": "1",
+    "currencyName": "american dollar",
+    "id": "56",
+    "rate100": "55",
+    "rate33": "18.3",
+    "rate66": "36.7"
+  },
+  {
+    "name": "The Gambia",
+    "currency": "0",
+    "currencyName": "0o",
+    "id": "57",
+    "rate100": "45",
+    "rate33": "15",
+    "rate66": "30"
+  },
+  {
+    "name": "Tchaj-wan",
+    "currency": "0",
+    "currencyName": "0o",
+    "id": "58",
+    "rate100": "40",
+    "rate33": "13.3",
+    "rate66": "26.7"
+  },
+  {
+    "name": "Togo",
+    "currency": "0",
+    "currencyName": "0o",
+    "id": "59",
+    "rate100": "40",
+    "rate33": "13.3",
+    "rate66": "26.7"
+  },
+  {
+    "name": "Tunisia",
+    "currency": "0",
+    "currencyName": "0o",
+    "id": "60",
+    "rate100": "40",
+    "rate33": "13.3",
+    "rate66": "26.7"
+  },
+  {
+    "name": "Turkey",
+    "currency": "0",
+    "currencyName": "0o",
+    "id": "61",
+    "rate100": "40",
+    "rate33": "13.3",
+    "rate66": "26.7"
+  },
+  {
+    "name": "Turkmenistan",
+    "currency": "1",
+    "currencyName": "american dollar",
+    "id": "62",
+    "rate100": "40",
+    "rate33": "13.3",
+    "rate66": "26.7"
+  },
+  {
+    "name": "Uganda",
+    "currency": "1",
+    "currencyName": "american dollar",
+    "id": "63",
+    "rate100": "55",
+    "rate33": "18.3",
+    "rate66": "36.7"
+  },
+  {
+    "name": "Ukraine",
+    "currency": "0",
+    "currencyName": "0o",
+    "id": "64",
+    "rate100": "45",
+    "rate33": "15",
+    "rate66": "30"
+  },
+  {
+    "name": "Union of Myanmar",
+    "currency": "0",
+    "currencyName": "0o",
+    "id": "65",
+    "rate100": "35",
+    "rate33": "11.7",
+    "rate66": "23.3"
+  },
+  {
+    "name": "United Arab Emirates",
+    "currency": "1",
+    "currencyName": "american dollar",
+    "id": "66",
+    "rate100": "55",
+    "rate33": "18.3",
+    "rate66": "36.7"
+  },
+  {
+    "name": "United Kingdom",
+    "currency": "4",
+    "currencyName": "british pound",
+    "id": "67",
+    "rate100": "45",
+    "rate33": "15",
+    "rate66": "30"
+  },
+  {
+    "name": "United States Of America",
+    "currency": "1",
+    "currencyName": "american dollar",
+    "id": "68",
+    "rate100": "55",
+    "rate33": "18.3",
+    "rate66": "36.7"
+  },
+  {
+    "name": "Uruguay",
+    "currency": "1",
+    "currencyName": "american dollar",
+    "id": "69",
+    "rate100": "50",
+    "rate33": "16.7",
+    "rate66": "33.3"
+  },
+  {
+    "name": "Uzbekistan",
+    "currency": "0",
+    "currencyName": "0o",
+    "id": "70",
+    "rate100": "40",
+    "rate33": "13.3",
+    "rate66": "26.7"
+  },
+  {
+    "name": "Venezuela",
+    "currency": "1",
+    "currencyName": "american dollar",
+    "id": "71",
+    "rate100": "60",
+    "rate33": "20",
+    "rate66": "40"
+  },
+  {
+    "name": "Vietnam",
+    "currency": "0",
+    "currencyName": "0o",
+    "id": "72",
+    "rate100": "40",
+    "rate33": "13.3",
+    "rate66": "26.7"
+  },
+  {
+    "name": "Yemen",
+    "currency": "0",
+    "currencyName": "0o",
+    "id": "73",
+    "rate100": "35",
+    "rate33": "11.7",
+    "rate66": "23.3"
+  },
+  {
+    "name": "Zambia",
+    "currency": "1",
+    "currencyName": "american dollar",
+    "id": "74",
+    "rate100": "55",
+    "rate33": "18.3",
+    "rate66": "36.7"
+  },
+  {
+    "name": "Zimbabwe",
+    "currency": "1",
+    "currencyName": "american dollar",
+    "id": "75",
+    "rate100": "50",
+    "rate33": "16.7",
+    "rate66": "33.3"
+  },
+  {
+    "name": "Other not mentioned countries",
+    "currency": "0",
+    "currencyName": "0o",
+    "id": "76",
+    "rate100": "35",
+    "rate33": "11.7",
+    "rate66": "23.3"
+  }
+]

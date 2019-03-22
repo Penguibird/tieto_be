@@ -6,18 +6,20 @@ using Tieto.Models;
 
 namespace Tieto.BLL
 {
-    interface ILocationManager
+    public interface ILocationManager
     {
 
-        void Add();
+        int Save(Location location);
 
-        void Delete();
+        void Delete(int id);
 
-        void Edit();
+        void Edit(int id);
 
-        Location Get();
+        Location Get(int id);
 
-        Location GetList(Trip trip);
+        List<Location> GetList(Trip trip);
+
+        List<Location> GetList(int tripId);
 
     }
 }

@@ -23,5 +23,7 @@ namespace Tieto.BLL
 
         void GeneratePassword(User user, string password);
 
+        void AddTrip(int id, Trip trip);
+
     }
 }

@@ -9,11 +9,13 @@ namespace Tieto.BLL
     public interface ITripManager
     {
 
-        IList<Trip> GetList(string username);
+        IList<Trip> GetList(int userId);
 
         Trip Get(int id);
 
-        void Add(Trip trip);
+        int Save(int userId, Trip trip);
+
+        Trip SaveAndReturn(int userId, Trip trip);
 
         void Edit(int id);
 

@@ -2,20 +2,48 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Tieto.DLL;
 using Tieto.Models;
 
 namespace Tieto.BLL
 {
     public class TripManager : ITripManager
     {
-        public void Add(Trip trip)
+        public int Save(int userId, Trip trip)
         {
-            throw new NotImplementedException();
+
+            ITripDbProvider db = ObjectContainer.GetTripDbProvider();
+
+            if (trip.ID == 0)
+            {
+                return db.Create(trip, userId);
+            }
+            else
+            {
+                return db.Update(trip, userId);
+            }
+
+        }
+
+        public Trip SaveAndReturn(int userId, Trip trip)
+        {
+            ITripDbProvider db = ObjectContainer.GetTripDbProvider();
+
+            if (trip.ID == 0)
+            {
+                return db.CreateAndReturn(trip, userId);
+            }
+            else
+            {
+                return db.UpdateAndReturn(trip, userId);
+            }
         }
 
         public void Delete(int id)
         {
-            throw new NotImplementedException();
+            ITripDbProvider db = ObjectContainer.GetTripDbProvider();
+
+            db.Delete(id);
         }
 
         public void Edit(int id)
@@ -30,17 +58,16 @@ namespace Tieto.BLL
 
         public Trip Get(int id)
         {
-            throw new NotImplementedException();
+            ITripDbProvider db = ObjectContainer.GetTripDbProvider();
+
+            return db.Read(id);
         }
 
-        public IList<Trip> GetList(string username)
+        public IList<Trip> GetList(int userId)
         {
-            throw new NotImplementedException();
-        }
+            ITripDbProvider db = ObjectContainer.GetTripDbProvider();
 
-        public Trip GetTrip(int id)
-        {
-            throw new NotImplementedException();
+            return db.FindByUserId(userId);
         }
 
     }

@@ -6,7 +6,7 @@ using Tieto.Models;
 
 namespace Tieto.DLL
 {
-    interface IUserDbProvider
+    public interface IUserDbProvider
     {
 
         void Create(User User);
@@ -21,6 +21,8 @@ namespace Tieto.DLL
 
         void CreatePassword(User u, string Password);
 
+        void AddTrip(int id, Trip trip);
+            
         User VerifyPassword(int id, string Password);
 
     }

@@ -10,8 +10,8 @@ using Tieto.Models;
 namespace Tieto.Migrations
 {
     [DbContext(typeof(TrippiDb))]
-    [Migration("20181121193941_Auth")]
-    partial class Auth
+    [Migration("20190308111406_Trip_Exchange_Rate")]
+    partial class Trip_Exchange_Rate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -64,6 +64,59 @@ namespace Tieto.Migrations
                     b.ToTable("Countries");
                 });
 
+            modelBuilder.Entity("Tieto.Models.DayExchange", b =>
+                {
+                    b.Property<int>("ID")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<DateTime>("Date");
+
+                    b.HasKey("ID");
+
+                    b.ToTable("DayExchanges");
+                });
+
+            modelBuilder.Entity("Tieto.Models.DayFood", b =>
+                {
+                    b.Property<int>("ID")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<bool>("Breakfast");
+
+                    b.Property<bool>("Dinner");
+
+                    b.Property<bool>("Lunch");
+
+                    b.HasKey("ID");
+
+                    b.ToTable("DayFood");
+                });
+
+            modelBuilder.Entity("Tieto.Models.ExchangeRate", b =>
+                {
+                    b.Property<int>("ID")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<int>("CurrencyCode");
+
+                    b.Property<int?>("DayExchangeID");
+
+                    b.Property<double>("Rate");
+
+                    b.Property<int?>("TripID");
+
+                    b.HasKey("ID");
+
+                    b.HasIndex("DayExchangeID");
+
+                    b.HasIndex("TripID");
+
+                    b.ToTable("ExchangeRates");
+                });
+
             modelBuilder.Entity("Tieto.Models.Location", b =>
                 {
                     b.Property<int>("ID")
@@ -76,9 +129,11 @@ namespace Tieto.Migrations
 
                     b.Property<DateTime>("Departure");
 
-                    b.Property<bool>("IsCrossing");
+                    b.Property<int?>("FoodID");
 
-                    b.Property<int>("TravelType");
+                    b.Property<int>("InboundTravelType");
+
+                    b.Property<bool>("IsCrossing");
 
                     b.Property<int?>("TripID");
 
@@ -86,9 +141,38 @@ namespace Tieto.Migrations
 
                     b.HasIndex("CityID");
 
+                    b.HasIndex("FoodID");
+
                     b.HasIndex("TripID");
 
                     b.ToTable("Location");
+                });
+
+            modelBuilder.Entity("Tieto.Models.LocationFood", b =>
+                {
+                    b.Property<int>("ID")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<int?>("FirstDayID");
+
+                    b.Property<int?>("LastDayID");
+
+                    b.Property<int?>("MiddleDaysID");
+
+                    b.Property<int?>("OnlyDayID");
+
+                    b.HasKey("ID");
+
+                    b.HasIndex("FirstDayID");
+
+                    b.HasIndex("LastDayID");
+
+                    b.HasIndex("MiddleDaysID");
+
+                    b.HasIndex("OnlyDayID");
+
+                    b.ToTable("LocationFood");
                 });
 
             modelBuilder.Entity("Tieto.Models.Trip", b =>
@@ -97,11 +181,21 @@ namespace Tieto.Migrations
                         .ValueGeneratedOnAdd()
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<int?>("UserID");
+                    b.Property<bool>("Deleted");
+
+                    b.Property<string>("Project");
+
+                    b.Property<string>("Purpose");
+
+                    b.Property<DateTime?>("StartDate");
+
+                    b.Property<string>("Task");
+
+                    b.Property<string>("Title");
+
+                    b.Property<int>("UserID");
 
                     b.HasKey("ID");
-
-                    b.HasIndex("UserID");
 
                     b.ToTable("Trips");
                 });
@@ -141,22 +235,49 @@ namespace Tieto.Migrations
                         .HasForeignKey("AllowanceID");
                 });
 
+            modelBuilder.Entity("Tieto.Models.ExchangeRate", b =>
+                {
+                    b.HasOne("Tieto.Models.DayExchange")
+                        .WithMany("Rates")
+                        .HasForeignKey("DayExchangeID");
+
+                    b.HasOne("Tieto.Models.Trip")
+                        .WithMany("ExchangeRates")
+                        .HasForeignKey("TripID");
+                });
+
             modelBuilder.Entity("Tieto.Models.Location", b =>
                 {
                     b.HasOne("Tieto.Models.City", "City")
                         .WithMany()
                         .HasForeignKey("CityID");
 
+                    b.HasOne("Tieto.Models.LocationFood", "Food")
+                        .WithMany()
+                        .HasForeignKey("FoodID");
+
                     b.HasOne("Tieto.Models.Trip", "Trip")
                         .WithMany("Locations")
                         .HasForeignKey("TripID");
                 });
 
-            modelBuilder.Entity("Tieto.Models.Trip", b =>
+            modelBuilder.Entity("Tieto.Models.LocationFood", b =>
                 {
-                    b.HasOne("Tieto.Models.User")
-                        .WithMany("Trips")
-                        .HasForeignKey("UserID");
+                    b.HasOne("Tieto.Models.DayFood", "FirstDay")
+                        .WithMany()
+                        .HasForeignKey("FirstDayID");
+
+                    b.HasOne("Tieto.Models.DayFood", "LastDay")
+                        .WithMany()
+                        .HasForeignKey("LastDayID");
+
+                    b.HasOne("Tieto.Models.DayFood", "MiddleDays")
+                        .WithMany()
+                        .HasForeignKey("MiddleDaysID");
+
+                    b.HasOne("Tieto.Models.DayFood", "OnlyDay")
+                        .WithMany()
+                        .HasForeignKey("OnlyDayID");
                 });
 #pragma warning restore 612, 618
         }

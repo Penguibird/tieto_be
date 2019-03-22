@@ -9,7 +9,17 @@ namespace Tieto.Models
     {
 
         public int ID { get; set; }
-        public IEnumerable<Location> Locations { get; set; }
+        public string Title { get; set; }
+        public string Purpose { get;set; }
+        public string Project { get; set; }
+        public string Task { get; set; }
+        public string Comment { get; set; }
+        public bool Deleted { get; set; }
+        public bool Exported { get; set; }
+        public DateTime? StartDate { get; set; }
+        public IList<ExchangeRate> ExchangeRates { get; set; }
+        public IList<Location> Locations { get; set; }
+        public int UserID { get; set; }
 
     }
 }

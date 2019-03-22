@@ -9,19 +9,32 @@ namespace Tieto.Models
     {
 
         public int ID { get; set; }
-        public TravelType TravelType { get; set; }
         public bool IsCrossing { get; set; }
+        public Country CrossingFrom { get; set; }
+        public Country CrossingTo { get; set; }
+        public TravelType? InboundTravelType { get; set; }
         public City City { get; set; }
-        public DateTime Arrival { get; set; }
-        public DateTime Departure { get; set; }
-        public Trip Trip { get; set; }
+
+        //Milliseconds to midnight of the correct day
+        public long? ArrivalDate { get; set; }
+        //Milliseconds to correct time since midnight
+        public long? ArrivalTime { get; set; }
+
+        //Milliseconds to midnight of the correct day
+        public long? DepartureDate { get; set; }
+        //Milliseconds to correct time since midnight
+        public long? DepartureTime { get; set; }
+        public LocationFood Food { get; set; }
 
     }
 
     public enum TravelType
     {
-        CAR = 1,
-        AEROPLANE = 2,
-        TRAIN = 3
+        COMPANY_CAR = 0,
+        OWN_CAR = 1,
+        SLOW_TRAIN = 2,
+        FAST_TRAIN = 3,
+        BUS = 4,
+        PLANE = 5
     }
 }

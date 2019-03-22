@@ -15,8 +15,5 @@ namespace Tieto.Models
         public string FirstName { get; set; }
         public string LastName { get; set; }
 
-        public IEnumerable<Trip> Trips { get; set; }
-
-
     }
 }

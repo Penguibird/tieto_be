@@ -6,14 +6,20 @@ using Tieto.Models;
 
 namespace Tieto.DLL
 {
-    interface ITripDbProvider
+    public interface ITripDbProvider
     {
 
-        void Create(Trip Trip);
+        int Create(Trip Trip, int userId);
 
-        void Update(Trip Trip);
+        int Update(Trip Trip, int userId);
+
+        Trip CreateAndReturn(Trip Trip, int userId);
+
+        Trip UpdateAndReturn(Trip Trip, int userId);
 
         Trip Read(int id);
+
+        List<Trip> FindByUserId(int userId);
 
         void Delete(int id);
 
