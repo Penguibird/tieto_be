@@ -34,12 +34,16 @@ namespace Tieto.DLL
         {
             Location loc = DbContext.Locations.
                 Include("City").
-                Include("CrossingFrom").
-                Include("CrossingTo").
-                Include("Food").
+                Include("Food.FirstDay").
+                Include("Food.MiddleDays").
+                Include("Food.LastDay").
+                Include("Food.OnlyDay").
             First(l => l.ID == id);
 
-            loc.City.Country = DbContext.Countries.Find(loc.City.CountryID);
+            if (loc.City != null)
+            {
+                loc.City.Country = DbContext.Countries.Find(loc.City.CountryID);
+            }
             return loc;
 
         }

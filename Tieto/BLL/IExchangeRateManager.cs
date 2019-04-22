@@ -8,6 +8,6 @@ namespace Tieto.BLL
 {
     public interface IExchangeRateManager
     {
-        IEnumerable<ExchangeRate> FetchCurrencyResource(DateTime dateTime);
+        IEnumerable<ExchangeRate> FetchCurrencyResource(long dateTime);
     }
 }

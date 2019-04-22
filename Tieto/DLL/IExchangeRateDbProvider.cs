@@ -12,8 +12,8 @@ namespace Tieto.DLL
 
         DayExchange Read(int id);
 
-        bool ContainsToday(DateTime dateTime);
+        bool ContainsToday(long dateTime);
 
-        IEnumerable<ExchangeRate> GetToday(DateTime dateTime);
+        IEnumerable<ExchangeRate> GetToday(long dateTime);
     }
 }

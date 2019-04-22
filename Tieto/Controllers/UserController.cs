@@ -48,7 +48,7 @@ namespace Tieto.Controllers
                 {
                     new Claim(ClaimTypes.Name, u.ID.ToString())
                 }),
-                Expires = DateTime.UtcNow.AddDays(1), //vary this based on the "stay signed in" toggle
+                Expires = DateTime.UtcNow.AddDays(user.LongSign ? 365 : 1), //vary this based on the "stay signed in" toggle
                 SigningCredentials = new SigningCredentials(key, SecurityAlgorithms.HmacSha256Signature),
                 Issuer = "tieto-trippi-app",
                 Audience = "everyone"
@@ -85,9 +85,8 @@ namespace Tieto.Controllers
             User u = new User
             {
                 Email = user.Username,
-                FirstName = "",
-                LastName = "",
-                //Trips = null
+                FullName = user.FullName,
+                SuperiorEmail = user.SuperiorEmail
             };
 
             userManager.GeneratePassword(u, user.Password);
@@ -95,6 +94,14 @@ namespace Tieto.Controllers
             userManager.Add(u);
 
             return Authenticate(user);
+        }
+
+        [AllowAnonymous]
+        [HttpPost("checkEmail")]
+        public bool CheckEmail([FromBody] string email)
+        {
+            IUserManager u = ObjectContainer.GetUserManager();
+            return u.GetByEmail(email) == null;
         }
 
         [HttpGet("tokenCheck")]

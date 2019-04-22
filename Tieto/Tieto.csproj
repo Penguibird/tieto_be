@@ -1,9 +1,20 @@
-<Project Sdk="Microsoft.NET.Sdk.Web">
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
 
   <PropertyGroup>
-    <TargetFramework>netcoreapp2.1</TargetFramework>
+    <TargetFramework>netcoreapp2.2</TargetFramework>
     <LangVersion>8.0</LangVersion>
   </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Migrations\20190406194253_Money_As_Double.cs" />
+    <Compile Remove="Migrations\20190406194253_Money_As_Double.Designer.cs" />
+    <Compile Remove="Migrations\20190407105611_Date_As_Long_DayExchange.cs" />
+    <Compile Remove="Migrations\20190407105611_Date_As_Long_DayExchange.Designer.cs" />
+    <Compile Remove="Migrations\20190407105734_Date_As_Long_DayExchange.cs" />
+    <Compile Remove="Migrations\20190407105734_Date_As_Long_DayExchange.Designer.cs" />
+    <Compile Remove="Migrations\20190421173118_User-Finalization.cs" />
+    <Compile Remove="Migrations\20190421173118_User-Finalization.Designer.cs" />
+  </ItemGroup>
 
   <ItemGroup>
     <DotNetCliToolReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Tools" Version="2.0.0" />
@@ -11,9 +22,9 @@
 
   <ItemGroup>
     <PackageReference Include="iTextSharp" Version="5.5.13" />
-    <PackageReference Include="Microsoft.AspNetCore.All" Version="2.1.5" />
-    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="2.1.4" />
-    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.1.5" />
+    <PackageReference Include="Microsoft.AspNetCore.All" Version="2.2.3" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="2.2.3" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.2.3" />
   </ItemGroup>
 
   <PropertyGroup Condition="'$(Configuration)' == 'Debug'">

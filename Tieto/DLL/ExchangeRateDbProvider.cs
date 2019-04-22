@@ -20,16 +20,16 @@ namespace Tieto.DLL
             return DbContext.DayExchanges.Find(id);
         }
 
-        public bool ContainsToday(DateTime dateTime)
+        public bool ContainsToday(long dateTime)
         {
-            var l = DbContext.DayExchanges.Where(d => d.Date.DayOfYear == dateTime.DayOfYear && d.Date.Year == dateTime.Year).ToList();
+            var l = DbContext.DayExchanges.Where(d => d.Date == dateTime).ToList();
 
             return l.Count == 1;
         }
 
-        public IEnumerable<ExchangeRate> GetToday(DateTime dateTime)
+        public IEnumerable<ExchangeRate> GetToday(long dateTime)
         {
-            var l = DbContext.DayExchanges.Include("Rates").Where(d => d.Date.DayOfYear == dateTime.DayOfYear && d.Date.Year == dateTime.Year).ToList();
+            var l = DbContext.DayExchanges.Include("Rates").Where(d => d.Date == dateTime).ToList();
             return l.ElementAt(0).Rates;
         }
     }

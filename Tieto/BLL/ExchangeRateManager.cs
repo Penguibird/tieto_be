@@ -11,7 +11,7 @@ namespace Tieto.BLL
 {
     public class ExchangeRateManager : IExchangeRateManager
     {
-        public IEnumerable<ExchangeRate> FetchCurrencyResource(DateTime dateTime)
+        public IEnumerable<ExchangeRate> FetchCurrencyResource(long dateTime)
         {
             var db = ObjectContainer.GetExchangeRateDbProvider();
 
@@ -21,9 +21,10 @@ namespace Tieto.BLL
             }
 
             //Formulate date and add to url
-            string days = (dateTime.Day < 10 ? "0" : "") + dateTime.Day.ToString();
-            string months = (dateTime.Month < 10 ? "0" : "") + dateTime.Month.ToString();
-            string years = dateTime.Year.ToString();
+            var date = new DateTime(dateTime * 10000 + new DateTime(1970, 1, 1).Ticks);
+            string days = (date.Day < 10 ? "0" : "") + date.Day.ToString();
+            string months = (date.Month < 10 ? "0" : "") + date.Month.ToString();
+            string years = date.Year.ToString();
 
             HttpWebRequest request = (HttpWebRequest)WebRequest.Create("https://www.cnb.cz/cs/financni_trhy/devizovy_trh/kurzy_devizoveho_trhu/denni_kurz.txt?date=" + days + "." + months + "." + years);
             HttpWebResponse response = (HttpWebResponse)request.GetResponse();
@@ -42,27 +43,53 @@ namespace Tieto.BLL
                     readStream = new StreamReader(receiveStream, Encoding.GetEncoding(response.CharacterSet));
                 }
 
-                double USA = 0;
-                double EMU = 0;
+                double USD = 0;
+                double EUR = 0;
+                double GBP = 0;
+                double CHF = 0;
+
+                string validDate = "";
 
                 while (!readStream.EndOfStream)
                 {
                     string s = readStream.ReadLine();
-                    if (s.Contains("USA"))
+
+                    if (validDate == "")
                     {
-                        string top = s.Split("|")[4];
-                        string bottom = s.Split("|")[2];
-                        top = top.Replace(",", ".");
-                        bottom = bottom.Replace(",", ".");
-                        USA = Convert.ToDouble(top) / Convert.ToDouble(bottom);
+                        validDate = s.Split(" ")[0];
                     }
-                    else if (s.Contains("EMU"))
+
+                    if (s.Contains("USD"))
                     {
                         string top = s.Split("|")[4];
                         string bottom = s.Split("|")[2];
                         top = top.Replace(",", ".");
                         bottom = bottom.Replace(",", ".");
-                        EMU = Convert.ToDouble(top) / Convert.ToDouble(bottom);
+                        USD = Convert.ToDouble(top) / Convert.ToDouble(bottom);
+                    }
+                    else if (s.Contains("EUR"))
+                    {
+                        string top = s.Split("|")[4];
+                        string bottom = s.Split("|")[2];
+                        top = top.Replace(",", ".");
+                        bottom = bottom.Replace(",", ".");
+                        EUR = Convert.ToDouble(top) / Convert.ToDouble(bottom);
+                    }
+                    else if (s.Contains("GBP"))
+                    {
+                        string top = s.Split("|")[4];
+                        string bottom = s.Split("|")[2];
+                        top = top.Replace(",", ".");
+                        bottom = bottom.Replace(",", ".");
+                        GBP = Convert.ToDouble(top) / Convert.ToDouble(bottom);
+                    }
+                    else if (s.Contains("CHF"))
+                    {
+                        string top = s.Split("|")[4];
+                        string bottom = s.Split("|")[2];
+                        top = top.Replace(",", ".");
+                        bottom = bottom.Replace(",", ".");
+                        CHF = Convert.ToDouble(top) / Convert.ToDouble(bottom);
                     }
                 }
 
@@ -74,12 +101,22 @@ namespace Tieto.BLL
                     new ExchangeRate
                     {
                         CurrencyCode = CurrencyCode.EUR,
-                        Rate = EMU
+                        Rate = EUR
                     },
                     new ExchangeRate
                     {
                         CurrencyCode = CurrencyCode.USD,
-                        Rate = USA
+                        Rate = USD
+                    },
+                    new ExchangeRate
+                    {
+                        CurrencyCode = CurrencyCode.GBP,
+                        Rate = GBP
+                    },
+                    new ExchangeRate
+                    {
+                        CurrencyCode = CurrencyCode.CHF,
+                        Rate = CHF
                     }
                 };
 

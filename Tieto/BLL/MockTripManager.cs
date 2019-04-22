@@ -60,5 +60,10 @@ namespace Tieto.BLL
         {
             throw new NotImplementedException();
         }
+
+        public Trip SetExchangeRates(long date, Trip trip)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

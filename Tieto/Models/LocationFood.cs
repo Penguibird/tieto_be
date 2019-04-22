@@ -9,8 +9,12 @@ namespace Tieto.Models
     {
         public int ID { get; set; }
         public DayFood FirstDay { get; set; }
-        public DayFood MiddleDays { get; set; }
+        public IList<DayFood> MiddleDays { get; set; }
         public DayFood LastDay { get; set; }
         public DayFood OnlyDay { get; set; }
+
+        public LocationFood()
+        {
+        }
     }
 }

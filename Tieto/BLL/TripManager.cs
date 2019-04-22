@@ -60,7 +60,11 @@ namespace Tieto.BLL
         {
             ITripDbProvider db = ObjectContainer.GetTripDbProvider();
 
-            return db.Read(id);
+            Trip trip = db.Read(id);
+
+            trip.ArrangePoints();
+
+            return trip;
         }
 
         public IList<Trip> GetList(int userId)
@@ -70,5 +74,28 @@ namespace Tieto.BLL
             return db.FindByUserId(userId);
         }
 
+        public Trip SetExchangeRates(long date, Trip trip)
+        {
+            IExchangeRateManager m = ObjectContainer.GetExchangeRateManager();
+
+            if (date == -1)
+            {
+                trip.Exchange.Deleted = true;
+            }
+            else
+            {
+                List<ExchangeRate> e = m.FetchCurrencyResource(date).ToList();
+
+                var l = ObjectContainer.Clone(e);
+
+                trip.Exchange = new DayExchange()
+                {
+                    Date = date,
+                    Rates = l
+                };
+            }
+            
+            return trip;
+        }
     }
 }

@@ -55,6 +55,16 @@ namespace Tieto.BLL
             return new PDFManager();
         }
 
+        public static IMapsManager GetMapsManager()
+        {
+            return new MapsManager();
+        }
+
+        public static ICityDbProvider GetCityDbProvider()
+        {
+            return new CityDbProvider();
+        }
+
         public static T Clone<T>(T source)
         {
             var serialized = JsonConvert.SerializeObject(source);

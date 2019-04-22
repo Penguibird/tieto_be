@@ -59,5 +59,11 @@ namespace Tieto.BLL
             db.AddTrip(userId, trip);
         }
 
+        public User GetByEmail(string email)
+        {
+            IUserDbProvider db = ObjectContainer.GetUserDbProvider();
+
+            return db.FindByUsername(email);
+        }
     }
 }

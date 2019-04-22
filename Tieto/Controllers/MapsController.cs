@@ -10,6 +10,7 @@ using Tieto.Models;
 using System.Net.Http;
 using Microsoft.EntityFrameworkCore;
 using Tieto.DT;
+using Tieto.DLL;
 
 namespace Tieto.Controllers
 {
@@ -23,8 +24,37 @@ namespace Tieto.Controllers
             return ObjectContainer.GetUserManager().Get(Convert.ToInt32(HttpContext.User.Identity.Name));
         }*/
 
+        [HttpGet("validateCountry/{country}")]
+        public async Task<Country[]> ValidateCountry(string country)
+        {
+            HttpClient c = new HttpClient();
+            string key = System.IO.File.ReadAllText(Path.GetFullPath("~/../Assets/api_key.txt").Replace("~\\", ""));
+            HttpResponseMessage m = await c.GetAsync("https://maps.googleapis.com/maps/api/place/autocomplete/json?language=en&key=" + key + "&types=(regions)&input=" + country);
+
+            string response = await m.Content.ReadAsStringAsync();
+
+            response = FixCountryNames(response);
+
+            ICityDbProvider cityDbProvider = ObjectContainer.GetCityDbProvider();
+
+            CityDT o = Newtonsoft.Json.JsonConvert.DeserializeObject<CityDT>(response);
+
+            List<Country> countries = new List<Country>();
+
+            for (var i = 0; i < o.Predictions.Length; i++)
+            {
+                var guess = cityDbProvider.GetCountryByName(o.Predictions[i].structured_formatting.main_text);
+                if (guess != null && !countries.Contains(guess))
+                {
+                    countries.Add(guess);
+                }
+            }
+
+            return countries.ToArray();
+        }
+
         [HttpGet("validateCity/{city}")]
-        public async Task<object> ValidateCity(string city)
+        public async Task<City[]> ValidateCity(string city)
         {
             HttpClient c = new HttpClient();
             string key = System.IO.File.ReadAllText(Path.GetFullPath("~/../Assets/api_key.txt").Replace("~\\", ""));
@@ -32,10 +62,43 @@ namespace Tieto.Controllers
 
             string response = await m.Content.ReadAsStringAsync();
 
+            response = FixCountryNames(response);
+
+            ICityDbProvider cityDbProvider = ObjectContainer.GetCityDbProvider();
+
+            CityDT o = Newtonsoft.Json.JsonConvert.DeserializeObject<CityDT>(response);
+
+            string[] realCities = new string[o.Predictions.Length];
+            string[] secs = new string[o.Predictions.Length];
+            string[] realCountries = new string[o.Predictions.Length];
+            City[] cities = new City[o.Predictions.Length];
+
+            for (var i = 0; i < o.Predictions.Length; i++)
+            {
+                realCities[i] = o.Predictions[i].structured_formatting.main_text;
+                secs[i] = o.Predictions[i].structured_formatting.secondary_text;
+                realCountries[i] = (secs[i] == "" || secs[i] == null) ? realCities[i] : secs[i];
+                if (realCountries[i].Contains(',')) realCountries[i] = realCountries[i].Split(',')[realCountries[i].Split(',').Length - 1];
+                if (realCountries[i].ElementAt(0) == ' ') realCountries[i] = realCountries[i].Substring(1);
+                cities[i] = new City
+                {
+                    Country = cityDbProvider.GetCountryByName(realCountries[i]),
+                    GooglePlaceId = o.Predictions[i].place_id,
+                    Name = realCities[i]
+                };
+            }
+            return cities;
+        }
+
+        public static string FixCountryNames(string response)
+        {
+
             //The names of some countries are slightly different in the database as compared to the values returned by GMaps API
             //This fixes it in one place, forever
             //If Google Maps ever changes a name of a country, this is the place to add an IF statemenet and thereby fix it
-            if (response.Contains("Taiwan")) {
+
+            if (response.Contains("Taiwan"))
+            {
                 response = response.Replace("Taiwan", "Tchaj-wan");
             }
             if (response.Contains("Bermuda"))
@@ -108,20 +171,11 @@ namespace Tieto.Controllers
             {
                 response = response.Replace("USA", "United States Of America");
             }
-
-            TrippiDb DbContext = new TrippiDb();
-
-            CityDT o = Newtonsoft.Json.JsonConvert.DeserializeObject<CityDT>(response);
-            string realCity = o.Predictions[0].structured_formatting.main_text;
-            var sec = o.Predictions[0].structured_formatting.secondary_text;
-            string realCountry = (sec == "" || sec == null) ? realCity : sec;
-            realCountry = realCountry.Split(", ")[realCountry.Split(", ").Length - 1];
-            return new City
+            if (response.Contains("Czechia"))
             {
-                Country = DbContext.Countries.First(country => country.Name == realCountry),
-                GooglePlaceId = o.Predictions[0].place_id,
-                Name = realCity
-            };
+                response = response.Replace("Czechia", "Czech Republic");
+            }
+            return response;
         }
     }
 }

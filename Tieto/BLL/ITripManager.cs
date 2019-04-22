@@ -17,6 +17,8 @@ namespace Tieto.BLL
 
         Trip SaveAndReturn(int userId, Trip trip);
 
+        Trip SetExchangeRates(long date, Trip trip);
+
         void Edit(int id);
 
         void Delete(int id);

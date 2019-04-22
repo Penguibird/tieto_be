@@ -15,7 +15,7 @@ namespace Tieto.Migrations
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "2.1.4-rtm-31024")
+                .HasAnnotation("ProductVersion", "2.2.3-servicing-35854")
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
@@ -84,7 +84,9 @@ namespace Tieto.Migrations
                         .ValueGeneratedOnAdd()
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<DateTime>("Date");
+                    b.Property<long>("Date");
+
+                    b.Property<bool>("Deleted");
 
                     b.HasKey("ID");
 
@@ -101,9 +103,13 @@ namespace Tieto.Migrations
 
                     b.Property<bool>("Dinner");
 
+                    b.Property<int?>("LocationFoodID");
+
                     b.Property<bool>("Lunch");
 
                     b.HasKey("ID");
+
+                    b.HasIndex("LocationFoodID");
 
                     b.ToTable("DayFood");
                 });
@@ -120,15 +126,13 @@ namespace Tieto.Migrations
 
                     b.Property<int?>("DayExchangeID");
 
-                    b.Property<double>("Rate");
+                    b.Property<double>("DefaultRate");
 
-                    b.Property<int?>("TripID");
+                    b.Property<double>("Rate");
 
                     b.HasKey("ID");
 
                     b.HasIndex("DayExchangeID");
-
-                    b.HasIndex("TripID");
 
                     b.ToTable("ExchangeRates");
                 });
@@ -145,9 +149,17 @@ namespace Tieto.Migrations
 
                     b.Property<int?>("CityID");
 
-                    b.Property<int?>("CrossingFromID");
+                    b.Property<long?>("CrossedAt");
 
-                    b.Property<int?>("CrossingToID");
+                    b.Property<long?>("CrossedAtDate");
+
+                    b.Property<long?>("CrossedAtTime");
+
+                    b.Property<bool>("CrossedBorder");
+
+                    b.Property<long?>("DefaultCrossedAt");
+
+                    b.Property<bool>("Deleted");
 
                     b.Property<long?>("DepartureDate");
 
@@ -159,19 +171,21 @@ namespace Tieto.Migrations
 
                     b.Property<bool>("IsCrossing");
 
-                    b.Property<int?>("TripID");
+                    b.Property<int>("Position");
+
+                    b.Property<bool>("SectionModified");
+
+                    b.Property<bool>("Transit");
+
+                    b.Property<int>("TripId");
 
                     b.HasKey("ID");
 
                     b.HasIndex("CityID");
 
-                    b.HasIndex("CrossingFromID");
-
-                    b.HasIndex("CrossingToID");
-
                     b.HasIndex("FoodID");
 
-                    b.HasIndex("TripID");
+                    b.HasIndex("TripId");
 
                     b.ToTable("Locations");
                 });
@@ -186,8 +200,6 @@ namespace Tieto.Migrations
 
                     b.Property<int?>("LastDayID");
 
-                    b.Property<int?>("MiddleDaysID");
-
                     b.Property<int?>("OnlyDayID");
 
                     b.HasKey("ID");
@@ -195,8 +207,6 @@ namespace Tieto.Migrations
                     b.HasIndex("FirstDayID");
 
                     b.HasIndex("LastDayID");
-
-                    b.HasIndex("MiddleDaysID");
 
                     b.HasIndex("OnlyDayID");
 
@@ -212,6 +222,8 @@ namespace Tieto.Migrations
                     b.Property<string>("Comment");
 
                     b.Property<bool>("Deleted");
+
+                    b.Property<int?>("ExchangeID");
 
                     b.Property<bool>("Exported");
 
@@ -229,6 +241,8 @@ namespace Tieto.Migrations
 
                     b.HasKey("ID");
 
+                    b.HasIndex("ExchangeID");
+
                     b.ToTable("Trips");
                 });
 
@@ -240,13 +254,13 @@ namespace Tieto.Migrations
 
                     b.Property<string>("Email");
 
-                    b.Property<string>("FirstName");
-
-                    b.Property<string>("LastName");
+                    b.Property<string>("FullName");
 
                     b.Property<byte[]>("PasswordHash");
 
                     b.Property<byte[]>("PasswordSalt");
+
+                    b.Property<string>("SuperiorEmail");
 
                     b.HasKey("ID");
 
@@ -268,15 +282,18 @@ namespace Tieto.Migrations
                         .HasForeignKey("Rate66ID");
                 });
 
+            modelBuilder.Entity("Tieto.Models.DayFood", b =>
+                {
+                    b.HasOne("Tieto.Models.LocationFood")
+                        .WithMany("MiddleDays")
+                        .HasForeignKey("LocationFoodID");
+                });
+
             modelBuilder.Entity("Tieto.Models.ExchangeRate", b =>
                 {
                     b.HasOne("Tieto.Models.DayExchange")
                         .WithMany("Rates")
                         .HasForeignKey("DayExchangeID");
-
-                    b.HasOne("Tieto.Models.Trip")
-                        .WithMany("ExchangeRates")
-                        .HasForeignKey("TripID");
                 });
 
             modelBuilder.Entity("Tieto.Models.Location", b =>
@@ -285,21 +302,14 @@ namespace Tieto.Migrations
                         .WithMany()
                         .HasForeignKey("CityID");
 
-                    b.HasOne("Tieto.Models.Country", "CrossingFrom")
-                        .WithMany()
-                        .HasForeignKey("CrossingFromID");
-
-                    b.HasOne("Tieto.Models.Country", "CrossingTo")
-                        .WithMany()
-                        .HasForeignKey("CrossingToID");
-
                     b.HasOne("Tieto.Models.LocationFood", "Food")
                         .WithMany()
                         .HasForeignKey("FoodID");
 
                     b.HasOne("Tieto.Models.Trip")
                         .WithMany("Locations")
-                        .HasForeignKey("TripID");
+                        .HasForeignKey("TripId")
+                        .OnDelete(DeleteBehavior.Cascade);
                 });
 
             modelBuilder.Entity("Tieto.Models.LocationFood", b =>
@@ -312,13 +322,16 @@ namespace Tieto.Migrations
                         .WithMany()
                         .HasForeignKey("LastDayID");
 
-                    b.HasOne("Tieto.Models.DayFood", "MiddleDays")
-                        .WithMany()
-                        .HasForeignKey("MiddleDaysID");
-
                     b.HasOne("Tieto.Models.DayFood", "OnlyDay")
                         .WithMany()
                         .HasForeignKey("OnlyDayID");
+                });
+
+            modelBuilder.Entity("Tieto.Models.Trip", b =>
+                {
+                    b.HasOne("Tieto.Models.DayExchange", "Exchange")
+                        .WithMany()
+                        .HasForeignKey("ExchangeID");
                 });
 #pragma warning restore 612, 618
         }

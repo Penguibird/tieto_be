@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Tieto.BLL;
 using Tieto.Models;
 
 namespace Tieto.DLL
@@ -38,9 +39,12 @@ namespace Tieto.DLL
         {
             List<Trip> trips = DbContext.Trips.
                 Include("Locations.City").
-                Include("Locations.CrossingFrom").
-                Include("Locations.CrossingTo").
-                Include("Locations.Food").Where(t => t.UserID == userId && !t.Deleted).ToList();
+                Include("Locations.Food.FirstDay").
+                Include("Locations.Food.MiddleDays").
+                Include("Locations.Food.LastDay").
+                Include("Locations.Food.OnlyDay").
+                Include("Exchange.Rates").
+                Where(t => t.UserID == userId && !t.Deleted).ToList();
 
             for (var j = 0; j < trips.Count; j++)
             {
@@ -68,9 +72,11 @@ namespace Tieto.DLL
         {
             Trip trip = DbContext.Trips.
                 Include(t => t.Locations).ThenInclude(l => l.City).
-                Include(t => t.Locations).ThenInclude(l => l.CrossingFrom).
-                Include(t => t.Locations).ThenInclude(l => l.CrossingTo).
-                Include(t => t.Locations).ThenInclude(l => l.Food).
+                Include(t => t.Locations).ThenInclude(l => l.Food).ThenInclude(l => l.FirstDay).
+                Include(t => t.Locations).ThenInclude(l => l.Food).ThenInclude(l => l.MiddleDays).
+                Include(t => t.Locations).ThenInclude(l => l.Food).ThenInclude(l => l.LastDay).
+                Include(t => t.Locations).ThenInclude(l => l.Food).ThenInclude(l => l.OnlyDay).
+                Include("Exchange.Rates").
             FirstOrDefault(t => t.ID == id);
             
             for (var i = 0; i < trip.Locations.Count; i++)
@@ -96,6 +102,17 @@ namespace Tieto.DLL
         {
             DbContext.Update(trip);
             trip.UserID = userId;
+            //ILocationDbProvider locationDbProvider = ObjectContainer.GetLocationDbProvider();
+            for (var i = 0; i < trip.Locations.Count; i++)
+            {
+                if (trip.Locations[i].Deleted)
+                {
+                    DbContext.Entry(trip.Locations[i]).State = EntityState.Deleted;
+                    //locationDbProvider.Delete(trip.Locations[i].ID);
+                    //Dangerous code that will break things
+                }
+            }
+            if (trip.Exchange != null && trip.Exchange.Deleted) DbContext.Entry(trip.Exchange).State = EntityState.Deleted;
             DbContext.SaveChanges();
             return trip.ID;
         }
@@ -104,6 +121,17 @@ namespace Tieto.DLL
         {
             DbContext.Update(trip);
             trip.UserID = userId;
+            //ILocationDbProvider locationDbProvider = ObjectContainer.GetLocationDbProvider();
+            for (var i = 0; i < trip.Locations.Count; i++)
+            {
+                if (trip.Locations[i].Deleted)
+                {
+                    DbContext.Entry(trip.Locations[i]).State = EntityState.Deleted;
+                    //locationDbProvider.Delete(trip.Locations[i].ID);
+                    //Dangerous code that will break things
+                }
+            }
+            if (trip.Exchange != null && trip.Exchange.Deleted) DbContext.Entry(trip.Exchange).State = EntityState.Deleted;
             DbContext.SaveChanges();
             return trip;
         }

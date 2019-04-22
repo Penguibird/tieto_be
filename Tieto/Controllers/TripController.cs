@@ -35,7 +35,14 @@ namespace Tieto.Controllers
 
             ITripManager m = ObjectContainer.GetTripManager();
 
-            return m.GetList(GetUser().ID);
+            IList<Trip> trips = m.GetList(GetUser().ID);
+
+            for (var i = 0; i < trips.Count; i++)
+            {
+                trips[i].ArrangePoints();
+            }
+
+            return trips;
 
         }
 
@@ -47,7 +54,7 @@ namespace Tieto.Controllers
             Trip orig = m.Get(id);
 
             Trip newTrip = ObjectContainer.Clone(orig);
-            newTrip.Title = orig.Title != null ? orig.Title + " - Copy" : "Copy - " + (DateTime.Now.Day < 10 ? "0" : "") + DateTime.Now.Day + "." + (DateTime.Now.Month < 10 ? "0" : "") + DateTime.Now.Month + ". " + (DateTime.Now.Hour < 10 ? "0" : "") + DateTime.Now.Hour + ":" + (DateTime.Now.Minute < 10 ? "0" : "") + DateTime.Now.Minute;
+            newTrip.Title = orig.Title != null && orig.Title != "" ? orig.Title + " - Copy" : "Copy of Unnamed trip";
             newTrip.ID = 0;
             newTrip.Exported = false;
             for (var i = 0; i < newTrip.Locations.Count(); i++)
@@ -65,8 +72,18 @@ namespace Tieto.Controllers
                     l.Food.ID = 0;
                 }
             }
-
+            if (newTrip.Exchange != null)
+            {
+                newTrip.Exchange.ID = 0;
+                for (var i = 0; i < newTrip.Exchange.Rates.Count(); i++)
+                {
+                    newTrip.Exchange.Rates[i].ID = 0;
+                }
+            }
+            
             m.Save(GetUser().ID, newTrip);
+
+            newTrip.Locations.OrderBy(x => x.Position);
 
             return newTrip;
         }
@@ -84,7 +101,11 @@ namespace Tieto.Controllers
         {
             ITripManager m = ObjectContainer.GetTripManager();
 
-            return m.Get(id);
+            Trip trip = m.Get(id);
+
+            trip.Locations.OrderBy(x => x.ID);
+
+            return trip;
         }
 
         private ClaimsIdentity GetIdentityFromToken(string token)
@@ -179,6 +200,11 @@ namespace Tieto.Controllers
 
             ITripManager m = ObjectContainer.GetTripManager();
 
+            for (var i = 0; i < trip.Locations.Count; i++)
+            {
+                trip.Locations[i].Position = i;
+            }
+
             return m.Save(GetUser().ID, trip);
 
         }
@@ -187,6 +213,35 @@ namespace Tieto.Controllers
         public Trip SaveAndReturnTrip([FromBody] Trip trip)
         {
             ITripManager m = ObjectContainer.GetTripManager();
+            IMapsManager mapsManager = ObjectContainer.GetMapsManager();
+
+            for (var i = 0; i < trip.Locations.Count; i++)
+            {
+                trip.Locations[i].Position = i;
+            }
+
+            if (trip.ID > 0)
+            {
+                Trip old = m.Get(trip.ID);
+                List<List<Location>> oldSections = mapsManager.SplitTripIntoSections(old);
+
+                if (oldSections == null) return m.SaveAndReturn(GetUser().ID, trip);
+
+                List<List<Location>> sections = mapsManager.SplitTripIntoSections(trip);
+
+                //If a new point is added, it shows up as a new section here. If a transit point is added, it gets added to a section and changes the length
+                Location modified = null;
+                for (var i = 0; i < oldSections.Count; i++)
+                {
+                    if (oldSections[i].Count != sections[i].Count) modified = sections[i][1];
+                }
+
+                if (modified != null)
+                {
+                    mapsManager.SetSectionAsModified(GetUser(), trip, modified);
+                }
+
+            }
 
             return m.SaveAndReturn(GetUser().ID, trip);
         }
@@ -226,7 +281,7 @@ namespace Tieto.Controllers
         }
 
         [HttpPost("saveTask/{id}")]
-        public void SaveTask (int id, [FromBody] string task)
+        public void SaveTask(int id, [FromBody] string task)
         {
             ITripManager m = ObjectContainer.GetTripManager();
             Trip t = m.Get(id);
@@ -265,12 +320,18 @@ namespace Tieto.Controllers
         }*/
 
         [HttpPost("getExchangeRates")]
-        public ExchangeRate[] SaveStartDate([FromBody] DateTime dateTime)
+        public ExchangeRate[] GetExchangeRates([FromBody] long dateTime)
         {
             var e = ObjectContainer.GetExchangeRateManager();
             var rates = e.FetchCurrencyResource(dateTime);
 
             return rates.ToArray();
+        }
+
+        [HttpPost("editExchangeRate")]
+        public void EditExchangeRate(int tripId, CurrencyCode currencyCode, [FromBody] double value)
+        {
+
         }
     }
 }

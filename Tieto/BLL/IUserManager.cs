@@ -13,6 +13,8 @@ namespace Tieto.BLL
 
         User Get(int id);
 
+        User GetByEmail(string email);
+
         void Add(User user);
 
         void Edit(int id);

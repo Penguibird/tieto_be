@@ -30,7 +30,8 @@ namespace Tieto.Models
                    .AddJsonFile("appsettings.json")
                    .Build();
                 var connectionString = /*configuration.GetConnectionString(*/@"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=trippi;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";//);
-                optionsBuilder.UseSqlServer(connectionString);
+                optionsBuilder.UseSqlServer(connectionString, options => options.EnableRetryOnFailure());
+
             }
         }
 
